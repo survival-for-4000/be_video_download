@@ -49,7 +49,7 @@ jobs:
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           script_stop: true
           script: |
-            cd /home/ubuntu/hoit-server
+            cd /home/ec2-user/hoit-server
 
             echo "🚀 배포 시작..."
 
