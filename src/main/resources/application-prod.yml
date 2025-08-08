@@ -10,7 +10,7 @@ spring:
       max-file-size: 10MB
       max-request-size: 20MB
   rabbitmq:
-    host: rabbit-mq
+    host: 172.31.36.47
     port: 5672
   docker:
     compose:
@@ -34,7 +34,7 @@ spring:
     username: hoituser
   data:
     redis:
-      host: redis
+      host: 172.31.36.47
       port: 6379
   jpa:
     hibernate:
