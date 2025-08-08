@@ -2,7 +2,7 @@ app:
   client:
     url: http://localhost:8090
 server:
-  port: 8091
+  port: 8090
   shutdown: graceful
 spring:
   servlet:
