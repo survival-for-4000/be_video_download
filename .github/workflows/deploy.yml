@@ -33,7 +33,7 @@ jobs:
           docker save hoit-app:latest | gzip > hoit-app.tar.gz
 
       - name: 파일들 EC2에 전송
-        uses: appleboy/scp-action@v0.1.7W
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
