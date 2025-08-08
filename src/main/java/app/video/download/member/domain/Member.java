@@ -27,8 +27,4 @@ public class Member  {
         this.providerId = providerId;
     }
 
-    public boolean canUseCredit(int amount) {
-        return amount > 0 && this.credit >= amount;
-    }
-
 }
