@@ -18,7 +18,7 @@ public class WeightEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // 기본 키 필요
+    private Long id;
 
     private String name;
 
