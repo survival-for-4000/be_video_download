@@ -74,7 +74,7 @@ public class SecurityConfig {
                                                 "/swagger-resources/**",
                                                 "/admin/mypage/**",
                                                 "/home/**",
-                                                "/actuator/health",
+                                                "/actuator/**",
                                         "/actuator/prometheus",
                                         "/sse/**",
                                                 "/api/lora"
