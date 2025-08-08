@@ -6,7 +6,4 @@ services:
       - "8090:8090"
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-    depends_on:
-      - redis
-      - rabbit-mq
     restart: unless-stopped
