@@ -1,0 +1,73 @@
+app:
+  client:
+    url: https://hoit.ai.kr/*
+server:
+  port: 8091
+  shutdown: graceful
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  rabbitmq:
+    host: rabbit-mq
+    port: 5672
+  docker:
+    compose:
+      enabled: false
+  config:
+    import: "application-secret.yml"
+  autoconfigure:
+    exclude:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            redirect-uri: https://api.hoit.ai.kr/auth/google/redirect
+  lifecycle:
+    # 스프링부트가 종료 요청을 받은 후 기다려줄 수 있는 최대한의 시간d
+    timeout-per-shutdown-phase: 1h
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://hoit-database-1.cdogc6048p9x.ap-northeast-2.rds.amazonaws.com:3306/hoit_db
+    username: hoituser
+  data:
+    redis:
+      host: redis
+      port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false
+        highlight_sql: false
+        use_sql_comments: false
+logging:
+  level:
+    com.ll.demo03: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.orm.jdbc.bind: INFO
+    org.hibernate.orm.jdbc.extract: INFO
+    org.springframework.transaction.interceptor: INFO
+custom:
+  webhook-url: https://api.hoit.ai.kr
+  site:
+    name: "My Site Prod"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
